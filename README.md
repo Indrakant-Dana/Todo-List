@@ -4,10 +4,8 @@ It is made using Node.js, Express.js, MongoDB.
 
 ## How to run
 - Clone/download the project from github
-- type
-    npm install
-  in terminal
-    npm start or npm run index.js
+- type `npm install` in terminal
+- `npm start` or `npm run index.js`
 
 ## prerequisites to run the project
 - download node.js
