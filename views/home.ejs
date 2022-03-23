@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css" />
+    <link rel="stylesheet" href="./css/home.css" type="text/css" />
+    <title>
+        <%= title%>
+    </title>
+</head>
+
+<body>
+    <header>
+        <h1>TODO App</h1>
+    </header>
+    <main>
+        <div class="container">
+            <div class="upper_section">
+                <form action="/add_task" method="POST">
+                    <!-- <form action="/create-task" method="POST"> -->
+                    <div class="description">
+                        <label for="input-desc" class="label-text">Description</label><br />
+                        <input type="text" class="input-desc clr-grey" name="description" placeholder="Enter Name" required />
+                    </div>
+                    <div class="second-layer">
+                        <div class="category">
+                            <label for="input-ctg" class="label-text">Category</label><br />
+                            <select class="input-ctg clr-grey" name="category" required>
+                                <option value="Personel">Personel</option>
+                                <option value="Work">Work</option>
+                                <option value="College">College</option>
+                                <option value="Home">Home</option>
+                            </select>
+                        </div>
+                        <div class="date">
+                            <label for="input-date" class="label-text">Due Date</label><br />
+                            <input type="date" class="input-date clr-grey" name="date" required />
+                        </div>
+                    </div>
+                    <div class="buttons">
+                        <button class="main-buttons" type="submit" class="addTask">
+                            Add Task
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <div class="lower_section">
+                <form action="/delete_task" method="POST">
+                    <%for(let i of task_list){ %>
+                    <div class="task">
+                        <label for="completed" class="task_details">
+                            <div class="task_info"><span>
+                                    <%= i.description %></span></div>
+                            <div class="task_date"><span>Due Date:
+                                    <%= i.dueDate%></span></div>
+                        </label>
+                        <div class="task_type">
+                            <%= i.category%>
+                        </div>
+                        <button class="deleteButton bg-clr-red" name="completed" type="submit" value=<%=i._id%>>
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </div>
+                    <%}%>
+                </form>
+            </div>
+    </main>
+    <script src="./js/home.js"></script>
+</body>
+
+</html>
