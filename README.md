@@ -4,13 +4,14 @@ It is made using Node.js, Express.js, MongoDB.
 
 ## How to run
 - Clone/download the project from github
-- npm install
-- npm start or npm run index.js
+- type
+    npm install
+  in terminal
+    npm start or npm run index.js
 
 ## prerequisites to run the project
 - download node.js
 - download mongodb
-- run npm install
 
 
 ## features
@@ -19,7 +20,6 @@ It is made using Node.js, Express.js, MongoDB.
 - Add & see the type of task according to user requirements
 - todo's stored in database, so will not erase if reloaded.
 - see todos in list view
-- 
 
 
 
